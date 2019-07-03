@@ -39,7 +39,9 @@ The QR code's contents are written to the buffer as a single bit per cell ("modu
 order is left to right, top to bottom — that is, the first byte contains the leftmost 8 cells of the top row, the
 second byte contains the following 8 cells of that row, and so on. Each row is padded to a whole number of bytes in
 order to make vertical scanning easier; the padding bits don't contain any useful information. (Note that QR codes
-are always square and always have an odd number of cells per side, so there will always be some padding bits.)
+are always square and always have an odd number of cells per side, so there will always be some padding bits.)  
+Within each byte, the most significant bit represents the leftmost cell, and the least significant bit the rightmost.
+Bits are set for dark (black) cells and clear for light (white) cells.
 
 The `libqrgen.h` header file defines the following macros to make this buffer easier to handle, all of which take the
 version number as argument:
