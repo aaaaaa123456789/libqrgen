@@ -5,7 +5,7 @@
 #include <limits.h>
 
 #if CHAR_BIT != 8
-	#error This library requires 8-bit chars. Please ensure the target platform uses chars of this width and try again.
+  #error This library requires 8-bit chars. Please ensure the target platform uses chars of this width and try again.
 #endif
 
 #define QR_PIXELS_PER_SIDE(version) (17 + ((version) << 2))
